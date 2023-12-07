@@ -1,15 +1,15 @@
 from os import path
 from pydub import AudioSegment
 from pydub.playback import play
-#files
-src = "pt.mp3"
-dst = "pt.wav"
 
-#convert mp3 to wav
-def convert(filename):
+def mp3towav(filename):
+    dst = "pt.wav"
+
+    # convert mp3 to wav
     sound = AudioSegment.from_mp3(filename)
-    sound.export(filename, format="wav")
+    sound.export(dst, format="wav")
 
+def toMono(filename):
     raw_audio = AudioSegment.from_file(filename, format="wav")
     channel_count = raw_audio.channels
     print(channel_count)

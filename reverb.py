@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from scipy.io import wavfile
 
 
-sample_rate, data = wavfile.read("yt1s.com - YOOOOO sound effect.wav")
+sample_rate, data = wavfile.read("16bit1chan.wav")
 spectrum, freqs, t, im = plt.specgram(data, Fs=sample_rate, NFFT=1024, cmap=plt.get_cmap('autumn_r'))
 
 #prints var outputs
