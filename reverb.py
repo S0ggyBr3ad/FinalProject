@@ -1,9 +1,11 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.io import wavfile
+from tkinter.filedialog import askopenfilename
+from convert import*
 
 
-sample_rate, data = wavfile.read("yt1s.com - YOOOOO sound effect.wav")
+sample_rate, data = wavfile.read("pt_mono.wav")
 spectrum, freqs, t, im = plt.specgram(data, Fs=sample_rate, NFFT=1024, cmap=plt.get_cmap('autumn_r'))
 
 #prints var outputs
@@ -17,8 +19,6 @@ def find_target_frequency(freqs):
         return x
     
 def frequency_check():
-
-
     debugg(f'freqs {freqs[:10]}')
     target_frequency = find_target_frequency(freqs)
     debugg(f'target_frequency {target_frequency}')
