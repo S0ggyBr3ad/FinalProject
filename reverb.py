@@ -41,7 +41,7 @@ def find_nearest_value(array, value):
 def analyse(filename):
     sample_rate, data = wavfile.read(filename)
     spectrum, freqs, t, im = plt.specgram(data, Fs=sample_rate, NFFT=1024, cmap=plt.get_cmap('autumn_r'))
-
+    
     data_in_db = frequency_check(freqs, spectrum)
     plt.figure()
     # plot reverb time on grid

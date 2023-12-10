@@ -1,3 +1,4 @@
+import os.path
 from tkinter import*
 from tkinter import ttk     # from tkinter import Tk for Python 3.x
 from tkinter.filedialog import askopenfilename
@@ -18,6 +19,7 @@ def selectFile():
     else:
         print("Please choose a .mp3 or .wav file.")
         return
+    filename_label.config(text = f"Current file: {os.path.basename(filename)}")
     analyse("temp.wav")
 
 
@@ -33,10 +35,8 @@ selectBtn.grid(row=1, column = 0, sticky = W, padx = 10)
 
 fileFrame = ttk.Frame(root, relief='sunken')
 fileFrame.grid(row = 2, column = 0, sticky=("E", "W", "S"))
-# Create a Tkinter canvas
-canvas = FigureCanvasTkAgg(fig, master=root)
-canvas.draw()
+fileFrame = ttk.LabelFrame(_mainframe, text = '')
+filename_label = ttk.Label(_mainframe, text ='')
+filename_label.grid(row = 11, column = 0)
 
-# Add the canvas to the root window
-canvas.get_tk_widget().pack()
 root.mainloop()
