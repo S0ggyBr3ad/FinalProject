@@ -40,7 +40,7 @@ def selectFile():
 # Used to change the RT60 value displayed in the tkinter window
 def updateRT60(RT60):
     RT60_label.config(text=f"The RT60 is {RT60} seconds.")
-    RT60diff_label.config(text=f"The RT60 diff is {RT60-0.5}")
+    RT60diff_label.config(text=f"The RT60 diff is {round(RT60-0.5, 2)}")
 
 # Tkinter stuff
 root = Tk()
