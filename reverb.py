@@ -124,3 +124,4 @@ class Reverb:
         raw = np.frombuffer(raw, "int16")
         plt.title("Waveform")
         plt.plot(raw, color="#FF9999")
+        
